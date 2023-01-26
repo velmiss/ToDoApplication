@@ -4,17 +4,7 @@ using ToDoApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-
-//builder.Services.AddDbContext<TodoContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoContext") ?? throw new InvalidOperationException("Connection string 'TodoContext' not found.")));
-
-
-//add db content
-//builder.Services.AddDbContext<TodoContext>(opt =>
-//    opt.UseSqlServer(connectionString));
 builder.Services.AddDbContext<TodoContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
