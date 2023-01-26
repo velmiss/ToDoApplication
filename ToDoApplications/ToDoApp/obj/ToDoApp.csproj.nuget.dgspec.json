@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApp\\ToDoApp.csproj": {}
+    "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\TodoApp\\TodoApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApp\\ToDoApp.csproj": {
+    "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\TodoApp\\TodoApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApp\\ToDoApp.csproj",
-        "projectName": "ToDoApp",
-        "projectPath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApp\\ToDoApp.csproj",
+        "projectUniqueName": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\TodoApp\\TodoApp.csproj",
+        "projectName": "TodoApp",
+        "projectPath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\TodoApp\\TodoApp.csproj",
         "packagesPath": "C:\\Users\\anatt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApp\\obj\\",
+        "outputPath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\TodoApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

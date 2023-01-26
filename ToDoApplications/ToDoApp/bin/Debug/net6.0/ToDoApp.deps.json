@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "ToDoApp/1.0.0": {
+      "TodoApp/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.10",
@@ -15,7 +15,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.10"
         },
         "runtime": {
-          "ToDoApp.dll": {}
+          "TodoApp.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -540,7 +540,7 @@
     }
   },
   "libraries": {
-    "ToDoApp/1.0.0": {
+    "TodoApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

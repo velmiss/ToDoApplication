@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ToDoApp.Data
+namespace TodoApp.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ToDoApp.Pages
+namespace TodoApp.Pages
 {
     public class IndexModel : PageModel
     {

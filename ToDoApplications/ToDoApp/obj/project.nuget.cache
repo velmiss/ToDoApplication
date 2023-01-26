@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zahj4RUcitSzvSutLYnaD2JnTxAoyctDI64CjZjVsDq6S+iuX2zQWoBddSmmonwVAx7tyULMZqBvo3lXdR0UEA==",
+  "dgSpecHash": "AXhrCa7V8y/8F+iDenDK4IOZU1juiSWYswIWy58c1q0136GtgwOL5LKxEpFxAezD8uU2M2uWbbXISJ8wMfcecQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApp\\ToDoApp.csproj",
+  "projectFilePath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\TodoApp\\TodoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anatt\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\anatt\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
