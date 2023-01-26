@@ -1,6 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using ToDoApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+
+//builder.Services.AddDbContext<TodoContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoContext") ?? throw new InvalidOperationException("Connection string 'TodoContext' not found.")));
+
+
+//add db content
+//builder.Services.AddDbContext<TodoContext>(opt =>
+//    opt.UseSqlServer(connectionString));
+builder.Services.AddDbContext<TodoContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -12,6 +28,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
