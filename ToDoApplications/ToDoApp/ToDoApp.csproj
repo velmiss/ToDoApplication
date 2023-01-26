@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-ToDoApp-dbf79476-98fe-4323-99d2-efce3dee2416</UserSecretsId>
+    <UserSecretsId>aspnet-TodoApp-78e076a1-0079-4033-8223-02b50ba09ee8</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
