@@ -2,15 +2,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ToDoApp.Models;
 
-namespace ToDoApp.Pages
+namespace ToDoApp.Pages.secret
+
 {
-    public class TodopubModel : PageModel
+    public class IndexModel : PageModel
     {
-        public List<TodoItem> TodoItemspub { get; set; } = new List<TodoItem>();
+        public List<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
         public void OnGet()
         {
             TodoApi api = new TodoApi();
-            TodoItemspub = api.GetTodoItems();
+            TodoItems = api.GetTodoItems();
         }
     
     }
