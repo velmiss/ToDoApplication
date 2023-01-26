@@ -7,13 +7,13 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = TodoApp
-build_property.RootNamespace = TodoApp
-build_property.ProjectDir = C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp\
+build_property.RootNamespace = ToDoApp
+build_property.RootNamespace = ToDoApp
+build_property.ProjectDir = C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\ToDoApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp
+build_property.MSBuildProjectDirectory = C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\ToDoApp
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/anatt/Desktop/novia/År3/Service_Orienterade_system/ToDoApplication/ToDoApplications/TodoApp/Areas/Identity/Pages/_ViewStart.cshtml]
@@ -50,4 +50,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/anatt/Desktop/novia/År3/Service_Orienterade_system/ToDoApplication/ToDoApplications/TodoApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-0v6kvctis7
+build_metadata.AdditionalFiles.CssScope = b-mrk9ngqjco
