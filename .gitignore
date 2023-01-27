@@ -399,3 +399,8 @@ FodyWeavers.xsd
 /ToDoApplications/.vs/ToDoApplications/v17/.suo
 /ToDoApplications/ToDoApp/obj/project.nuget.cache
 /ToDoApplications/ToDoApp/obj/ToDoApp.csproj.nuget.dgspec.json
+/ToDoApplications/ToDoApi/obj/Debug/net6.0/ToDoApi.csproj.AssemblyReference.cache
+/ToDoApplications/ToDoApp/obj/Debug/net6.0/ToDoApp.AssemblyInfo.cs
+/ToDoApplications/ToDoApp/obj/Debug/net6.0/ToDoApp.AssemblyInfoInputs.cache
+/ToDoApplications/ToDoApp/obj/Debug/net6.0/ToDoApp.assets.cache
+/ToDoApplications/ToDoApp/obj/Debug/net6.0/ToDoApp.GeneratedMSBuildEditorConfig.editorconfig
