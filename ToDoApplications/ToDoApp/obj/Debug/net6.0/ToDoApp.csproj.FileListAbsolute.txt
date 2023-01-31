@@ -74,3 +74,5 @@ C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToD
 C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp\obj\Debug\net6.0\TodoApp.pdb
 C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp\obj\Debug\net6.0\TodoApp.genruntimeconfig.cache
 C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp\obj\Debug\net6.0\ref\TodoApp.dll
+C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp\bin\Debug\net6.0\Todo.Models.dll
+C:\Users\anatt\Desktop\novia\År3\Service_Orienterade_system\ToDoApplication\ToDoApplications\TodoApp\bin\Debug\net6.0\Todo.Models.pdb
