@@ -13,11 +13,10 @@ namespace TodoApp.Pages.TodoItem
     public class DetailsModel : PageModel
     {
         
-        public DetailsModel()
-        {
-        }
+   
 
-      public TodoItemDTO TodoItemDTO { get; set; }
+      //public TodoItemDTO TodoItemDTO { get; set; }
+		/*
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -27,6 +26,6 @@ namespace TodoApp.Pages.TodoItem
 			}
 
 			return Page();
-        }
+        }*/
     }
 }

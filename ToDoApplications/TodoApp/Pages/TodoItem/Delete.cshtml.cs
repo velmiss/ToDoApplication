@@ -13,13 +13,11 @@ namespace TodoApp.Pages.TodoItem
     public class DeleteModel : PageModel
     {
 
-        public DeleteModel()
-        {
-        }
+        
 
         [BindProperty]
-      public TodoItemDTO TodoItemDTO { get; set; }
-
+      //public TodoItemDTO TodoItemDTO { get; set; }
+        /*
         public async Task<IActionResult> OnGetAsync(long? id)
         {
             if (id == null)
@@ -36,5 +34,6 @@ namespace TodoApp.Pages.TodoItem
             
             return RedirectToPage("./Index");
         }
+		*/
     }
 }

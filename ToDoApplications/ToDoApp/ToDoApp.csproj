@@ -23,8 +23,4 @@
     <ProjectReference Include="..\Todo.Models\Todo.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

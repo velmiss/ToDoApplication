@@ -13,20 +13,18 @@ namespace TodoApp.Pages.TodoItem
     public class CreateModel : PageModel
     {
 
-        public CreateModel()
-        {
-        }
+        
 
         public IActionResult OnGet()
         {
             return Page();
         }
-
-        [BindProperty]
-        public TodoItemDTO TodoItemDTO { get; set; }
+		
+        //public TodoItemDTO TodoItemDTO { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+		/*
         public async Task<IActionResult> OnPostAsync()
         {
           if (!ModelState.IsValid)
@@ -37,5 +35,6 @@ namespace TodoApp.Pages.TodoItem
 
             return RedirectToPage("./Index");
         }
+		*/
     }
 }

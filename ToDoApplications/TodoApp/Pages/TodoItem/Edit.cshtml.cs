@@ -22,23 +22,24 @@ namespace TodoApp.Pages.TodoItem
         [BindProperty]
         public TodoItemDTO TodoItemDTO { get; set; } = default!;
 
+        /*
         public async Task<IActionResult> OnGetAsync(long? id)
         {
 			//not yet implemented
 			return Page();
-		}
+		}*/
 
 		
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        /*public async Task<IActionResult> OnPostAsync()
         {
         
 
             return RedirectToPage("./Index");
         }
-
+        */
 
     }
 }
