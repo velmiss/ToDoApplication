@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Todo.Models;
 
 namespace TodoApp.Data
 {
@@ -9,5 +10,6 @@ namespace TodoApp.Data
             : base(options)
         {
         }
+        public DbSet<Todo.Models.TodoItemDTO> TodoItemDTO { get; set; }
     }
 }

@@ -10248,8 +10248,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anatt\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\anatt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10260,13 +10259,9 @@
       "packagesPath": "C:\\Users\\anatt\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\anatt\\Desktop\\novia\\År3\\Service_Orienterade_system\\ToDoApplication\\ToDoApplications\\ToDoApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\anatt\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
