@@ -10,6 +10,6 @@ namespace TodoApp.Data
             : base(options)
         {
         }
-        public DbSet<Todo.Models.TodoItemDTO> TodoItemDTO { get; set; }
+        public DbSet<Todo.Models.TodoItemDTO>? TodoItemDTO { get; set; }
     }
 }

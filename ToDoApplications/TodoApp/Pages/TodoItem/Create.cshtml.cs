@@ -7,34 +7,56 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Todo.Models;
 using TodoApp.Data;
+using TodoApp.Models;
 
 namespace TodoApp.Pages.TodoItem
 {
-    public class CreateModel : PageModel
-    {
+	public class CreateModel : PageModel
+	{
 
-        
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
-		
-        //public TodoItemDTO TodoItemDTO { get; set; }
-        
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-		/*
-        public async Task<IActionResult> OnPostAsync()
-        {
-          if (!ModelState.IsValid)
+		public IActionResult OnGet()
+		{
+            //if not logged in, redirect to login page
+            if (!User.Identity.IsAuthenticated)
             {
-                return Page();
+                Response.Redirect("/Identity/Account/Login");
             }
-		
+            return Page();
+		}
 
-            return RedirectToPage("./Index");
-        }
-		*/
-    }
+		public TodoItemDTO TodoItemDTO { get; set; } = new TodoItemDTO();
+		// To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+
+		public async Task<IActionResult> OnPost(TodoItemDTO TodoItemDTO)
+		{
+            //if not logged in, redirect to login page
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("/Identity/Account/Login");
+            }
+            if (!ModelState.IsValid)
+			{
+				return Page();
+			}
+			else
+			{
+				var todoApi = new Todoapi();
+				 bool yes = await  todoApi.PostTodoItem(TodoItemDTO);
+	
+				if (yes)
+					{
+						return RedirectToPage("./Index");
+					}
+				else
+					{
+						return Page();
+					}
+			}
+
+		}
+
+	}
 }
+

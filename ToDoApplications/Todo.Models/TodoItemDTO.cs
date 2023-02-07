@@ -13,5 +13,19 @@ namespace Todo.Models
 		[Required]
 		public string Name { get; set; }
 		public bool IsComplete { get; set; }
-	}
+
+        public static implicit operator TodoItemDTO(Task<TodoItemDTO> v)
+        {
+            TodoItemDTO todoItem = new TodoItemDTO();
+            todoItem.Name = v.Result.Name;
+            todoItem.IsComplete = v.Result.IsComplete;
+            todoItem.Id = v.Result.Id;
+            return todoItem;
+        }
+        /*
+public static implicit operator TodoItemDTO(Task<TodoItemDTO> v)
+{
+
+}*/
+    }
 }

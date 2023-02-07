@@ -1,6 +1,15 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TodoApp.Data;
+using TodoApp.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+//limit guests to not se the todo
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 

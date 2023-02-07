@@ -6,35 +6,36 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Todo.Models;
 using TodoApp.Data;
+using TodoApp.Models;
 
 namespace TodoApp.Pages.TodoItem
 {
     public class IndexModel : PageModel
     {
-        private HttpClient mClient;
-        public IndexModel()
-        {
-			mClient = new HttpClient();
-            mClient.BaseAddress = new Uri("https://localhost:7244");
-            mClient.DefaultRequestHeaders.Add("Accept", "application/json");
-            mClient.DefaultRequestHeaders.Add("User-Agent", "TodoApp");
-		
+		public IList<TodoItemDTO> TodoItemDTOs { get;set; } = default!;
 
-		    TodoItemDTOs = new List<TodoItemDTO>();
-	
-        }
+		public async Task OnGetAsync()
+		{
+            //if not logged in, redirect to login page
+            if (!User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("/Identity/Account/Login");
+            }
 
-        public IList<TodoItemDTO> TodoItemDTOs { get;set; } = default!;
-		
-        public async Task OnGetAsync()
-        {
-			var response= await mClient.GetAsync("/api/TodoItem");
-			if (response.StatusCode == System.Net.HttpStatusCode.OK)
-			{
-				//var json = await response.Content.ReadAsStringAsync();
-				//TodoItemDTOs = JsonConvert.DeserializeObject<List<TodoItemDTO>>(json);
-			}
-			throw new HttpRequestException("Error getting TodoItemDTOs");
+            Todoapi todoapi = new Todoapi();
+			TodoItemDTOs = await todoapi.GetTodoItems();
+		}
+
+
+		//when page loads for the first time, get the list of todo items from the API
+		public async Task<IActionResult> OnPost()
+		{
+			//make a new todoapi
+			var todoApi = new Todoapi();
+			//get the list of todo items from the API
+			TodoItemDTOs = await todoApi.GetTodoItems();
+			//return the page
+			return Page();
 		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿/*using Todo.Models;
+﻿using Todo.Models;
 
 namespace TodoApp.Models
 {
@@ -6,7 +6,7 @@ namespace TodoApp.Models
 	{
 		private string httpConnect = "https://localhost:7244/api/";
 
-		public List<TodoItemDTO> GetTodoItems()
+		public async Task<List<TodoItemDTO>>  GetTodoItems()
 		{
 			List<TodoItemDTO> Todos;
 			//call the API located at https://localhost:7244/ to get the list of TodoItems using entity framework and return the list of TodoItems
@@ -14,14 +14,12 @@ namespace TodoApp.Models
 			{
 				client.BaseAddress = new Uri(httpConnect);
 				//HTTP GET
-				var responseTask = client.GetAsync("TodoItems");
-				responseTask.Wait();
-
-				var result = responseTask.Result;
-				if (result.IsSuccessStatusCode)
+				var responseTask = await client.GetAsync("TodoItems");
+				
+				if (responseTask.IsSuccessStatusCode)
 				{
 					//for each todo item in the list of todo items, add it to the list of todo items
-					var readTask = result.Content.ReadFromJsonAsync<List<TodoItemDTO>>();
+					var readTask = responseTask.Content.ReadFromJsonAsync<List<TodoItemDTO>>();
 					readTask.Wait();
 					if (readTask.Result != null)
 					{
@@ -45,22 +43,19 @@ namespace TodoApp.Models
 		}
 
 		//post new item to the API
-		public bool PostTodoItem(TodoItemDTO todoItem)
+		public async Task<bool> PostTodoItem(TodoItemDTO todoItem)
 		{
-			todoItem.Id = null;
 			TodoNoID todoNoID = new TodoNoID();
 			todoNoID.Name = todoItem.Name;
 			todoNoID.IsComplete = todoItem.IsComplete;
-
+			
 			using (var client = new HttpClient())
 			{
 				client.BaseAddress = new Uri(httpConnect);
 				//HTTP POST
-				var postTask = client.PostAsJsonAsync<TodoNoID>("TodoItems", todoNoID);
-				postTask.Wait();
+				var postTask = await client.PostAsJsonAsync<TodoNoID>("TodoItems", todoNoID);
 
-				var result = postTask.Result;
-				if (result.IsSuccessStatusCode)
+				if (postTask.IsSuccessStatusCode)
 				{
 					return true;
 				}
@@ -72,55 +67,60 @@ namespace TodoApp.Models
 			}
 		}
 		//get a todoitem with a specific id
-		public TodoItem GetTodoItem(int id)
+		public async Task<TodoItemDTO> GetTodoItem(long? id)
 		{
-			TodoItem todoItem = new TodoItem();
-			using (var client = new HttpClient())
+			if (id != null)
 			{
-				client.BaseAddress = new Uri(httpConnect);
-				//HTTP GET
-				var responseTask = client.GetAsync("TodoItems/" + id);
-				responseTask.Wait();
-
-				var result = responseTask.Result;
-				if (result.IsSuccessStatusCode)
+				TodoItemDTO todoItem = new TodoItemDTO();
+				using (var client = new HttpClient())
 				{
-					var readTask = result.Content.ReadFromJsonAsync<TodoItem>();
-					readTask.Wait();
-					if (readTask.Result != null)
+					client.BaseAddress = new Uri(httpConnect);
+					//HTTP GET
+					var responseTask = await client.GetAsync("TodoItems/" + id);
+				
+				
+					if (responseTask.IsSuccessStatusCode)
 					{
-						todoItem = readTask.Result;
+						var readTask = responseTask.Content.ReadFromJsonAsync<TodoItemDTO>();
+
+						if (readTask != null)
+						{
+							todoItem = readTask;
+						}
+						else
+						{
+							todoItem = new TodoItemDTO();
+						}
 					}
-					else
+					else //web api sent error response 
 					{
-						todoItem = new TodoItem();
+						//log response status here..
+
+						todoItem = new TodoItemDTO();
+
 					}
 				}
-				else //web api sent error response 
-				{
-					//log response status here..
 
-					todoItem = new TodoItem();
-
-				}
+				return todoItem;
 			}
+			else
+			{
+                return new TodoItemDTO();
+            }
 
-			return todoItem;
 		}
 
 
 		//put edit post by id
-		public bool PutTodoItem(int id, TodoItem todoItem)
+		public async Task<bool> PutTodoItem(long id, TodoItemDTO todoItem)
 		{
 			using (var client = new HttpClient())
 			{
 				client.BaseAddress = new Uri(httpConnect);
 				//HTTP PUT
-				var putTask = client.PutAsJsonAsync<TodoItem>("TodoItems/" + id, todoItem);
-				putTask.Wait();
-
-				var result = putTask.Result;
-				if (result.IsSuccessStatusCode)
+				var putTask = await client.PutAsJsonAsync<TodoItemDTO>("TodoItems/" + id, todoItem);
+				
+				if (putTask.IsSuccessStatusCode)
 				{
 					return true;
 				}
@@ -128,24 +128,23 @@ namespace TodoApp.Models
 				{
 					return false;
 				}
-
+				
 			}
 		}
 
 
 
 		// delete post with id
-		public bool DeleteTodoItem(int id)
+		//you should be able to await this method
+		public async Task<bool> DeleteTodoItem(long id)
 		{
 			using (var client = new HttpClient())
 			{
 				client.BaseAddress = new Uri(httpConnect);
 				//HTTP DELETE
-				var deleteTask = client.DeleteAsync("TodoItems/" + id);
-				deleteTask.Wait();
-
-				var result = deleteTask.Result;
-				if (result.IsSuccessStatusCode)
+				var deleteTask = await client.DeleteAsync("TodoItems/" + id);
+				
+				if (deleteTask.IsSuccessStatusCode)
 				{
 					return true;
 				}
@@ -158,35 +157,32 @@ namespace TodoApp.Models
 		}
 
 
-		public bool CompleteChangestate(int id)
+		public async Task<bool> CompleteChangestate(int id)
 		{
-			TodoItem todoItem = new TodoItem();
+			TodoItemDTO todoItem = new TodoItemDTO();
 			using (var client = new HttpClient())
 			{
 				client.BaseAddress = new Uri(httpConnect);
 				//HTTP GET
-				var responseTask = client.GetAsync("TodoItems/" + id);
-				responseTask.Wait();
-
-				var result = responseTask.Result;
-				if (result.IsSuccessStatusCode)
+				var responseTask = await client.GetAsync("TodoItems/" + id);
+				
+				if (responseTask.IsSuccessStatusCode)
 				{
-					var readTask = result.Content.ReadFromJsonAsync<TodoItem>();
-					readTask.Wait();
-					if (readTask.Result != null)
+					var readTask = await responseTask.Content.ReadFromJsonAsync<TodoItemDTO>();
+					if (readTask != null)
 					{
-						todoItem = readTask.Result;
+						todoItem = readTask;
 					}
 					else
 					{
-						todoItem = new TodoItem();
+						todoItem = new TodoItemDTO();
 					}
 				}
 				else //web api sent error response 
 				{
 					//log response status here..
 
-					todoItem = new TodoItem();
+					todoItem = new TodoItemDTO();
 
 				}
 			}
@@ -199,7 +195,7 @@ namespace TodoApp.Models
 			{
 				client.BaseAddress = new Uri(httpConnect);
 				//HTTP PUT
-				var putTask = client.PutAsJsonAsync<TodoItem>("TodoItems/" + id, todoItem);
+				var putTask = client.PutAsJsonAsync<TodoItemDTO>("TodoItems/" + id, todoItem);
 				putTask.Wait();
 
 				var result = putTask.Result;
@@ -216,4 +212,3 @@ namespace TodoApp.Models
 		}
 	}
 }
-*/
